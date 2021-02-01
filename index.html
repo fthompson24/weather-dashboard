@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Weather Dashboard</title>
-    <!--Bootstrap CSS CDN-->
+    <title>Sunny Skies</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
-    <!--Jumbotron for Title-->
-    <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color:#404040 ;color: white;">
-        <h1> <strong>Weather Dashboard</strong></h1>
-    </div>
+<body class="flex-column min-100-vh">
+    <header class="jumbotron jumbotron-fluid bg-info text-light p-3">
+        <h1 class="display-3 text-center">Sunny Skies - Weather Dashboard</h1>
+        <hr class="my-4">
+        <p class="lead text-center text-light"><strong>Plan your trips when the weather is perfect!</strong></p>
+    </header>
     <div class="container">
         <!--Row for searching a city-->
         <div class="row">
@@ -30,10 +28,10 @@
                     </div>
                 </div>
                 <!--section for search city history-->
-                <h3>Previous Searches</h3>
-                <ul class="list-group">
+                    <h3>Previous Searches</h3>
+                    <ul class="list-group d-flex">
 
-                </ul>
+                    </ul>
             </div>   
             <div class="col-sm-8">
                 <div class="row ml-2 border border-dark rounded">

@@ -2,3 +2,10 @@
     background-color: rgba(40, 36, 255, 0.233);
 }
 
+h1, h4, h2, h3 {
+    font-family:'Bebas Neue', cursive; ;
+}
+
+p {
+    font-family: 'Josefin Sans', sans-serif;
+}
