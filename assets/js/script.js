@@ -32,23 +32,19 @@ function displayWeather(event){
 }
 // Here we create the AJAX call
 function currentWeather(city){
-    // Here we build the URL so we can get a data from server side.
     var queryURL= "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + APIKey;
     $.ajax({
         url:queryURL,
         method:"GET",
     }).then(function(response){
 
-        // parse the response to display the current weather including the City name. the Date and the weather icon. 
-        console.log(response);
+        //console.log(response);
         //Dta object from server side Api for icon property.
         var weathericon= response.weather[0].icon;
         var iconurl="https://openweathermap.org/img/wn/"+weathericon +"@2x.png";
         // The date format method is taken from the  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
         var date=new Date(response.dt*1000).toLocaleDateString();
-        //parse the response for name of city and concanatig the date and icon.
         $(currentCity).html(response.name +"("+date+")" + "<img src="+iconurl+">");
-        // parse the response to display the current temperature.
         // Convert the temp to fahrenheit
 
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
@@ -60,12 +56,11 @@ function currentWeather(city){
         var windsmph=(ws*2.237).toFixed(1);
         $(currentWSpeed).html(windsmph+"MPH");
         // Display UVIndex.
-        //By Geographic coordinates method and using appid and coordinates as a parameter we are going build our uv query url inside the function below.
         UVIndex(response.coord.lon,response.coord.lat);
         forecast(response.id);
         if(response.cod==200){
             sCity=JSON.parse(localStorage.getItem("cityname"));
-            console.log(sCity);
+            //console.log(sCity);
             if (sCity==null){
                 sCity=[];
                 sCity.push(city.toUpperCase()
@@ -86,7 +81,6 @@ function currentWeather(city){
 }
     // This function returns the UVIindex response.
 function UVIndex(ln,lt){
-    //lets build the url for uvindex.
     var uvqURL="https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey+"&lat="+lt+"&lon="+ln;
     $.ajax({
             url:uvqURL,
